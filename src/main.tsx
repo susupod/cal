@@ -9,7 +9,10 @@ import App from "./App.tsx"
 import { UiShowcase } from "./UiShowcase.tsx"
 import "./index.css"
 
-const Component = location.pathname === "/ui-showcase" ? UiShowcase : App
+const Component =
+  location.pathname === "/ui-showcase" || location.hash === "#/ui-showcase"
+    ? UiShowcase
+    : App
 
 createRoot(document.getElementById("root")!).render(
   createElement(
